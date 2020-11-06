@@ -3,6 +3,6 @@
     description: kustomize
     entry: 
     language: system
-    args: []
+    args: ["echo Hello World"]
     always_run: true
     pass_filenames: false
