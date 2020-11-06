@@ -1,0 +1,8 @@
+-   id: bash
+    name: Run a command with bash
+    description: kustomize
+    entry: bash -c "$@"
+    language: system
+    args: []
+    always_run: true
+    pass_filenames: false
