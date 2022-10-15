@@ -3,6 +3,7 @@
     description: make
     entry: make
     language: system
-    args: [lint]
+    args:
+        - -B
     always_run: true
     pass_filenames: false
