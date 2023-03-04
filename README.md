@@ -1,2 +1,3 @@
 # pre-commit-python
-Pre-commit hook for running shell scripts
+
+Pre-commit hook for running scripts.

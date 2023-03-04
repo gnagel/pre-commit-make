@@ -1,9 +1,60 @@
--   id: make
-    name: make (via system)
-    description: make
-    entry: make
-    language: system
-    args:
-        - -B
-    always_run: true
-    pass_filenames: false
+---
+- id: make
+  name: make
+  description: >
+    make via system
+  language: system
+  entry: make
+  args:
+    - -B
+  always_run: true
+  pass_filenames: false
+
+- id: update-pyproject.toml
+  name: update pyproject.toml
+  description: >
+    if requirements/file1.txt, requirements/file2.txt, ... exist, update
+    pyproject.toml's [tool.setuptools.dynamic.optional-dependencies.file1], ...
+  language: perl
+  entry: update-pyproject.toml.pl
+  args:
+    - requirements/*.txt
+    - pyproject.toml
+  files: ^requirements/.*\.txt$
+  pass_filenames: false
+
+- id: update-CITATION.cff
+  name: update CITATION.cff
+  description: >
+    if pyproject.toml exists, update CITATION.cff
+  language: perl
+  entry: update-CITATION.cff.pl
+  args:
+    - pyproject.toml
+    - CITATION.cff
+  files: ^pyproject\.toml$
+  pass_filenames: false
+
+- id: update-package.json
+  name: update package.json
+  description: >
+    if pyproject.toml exists, update package.json
+  language: perl
+  entry: update-package.json.pl
+  args:
+    - pyproject.toml
+    - package.json
+  files: ^pyproject\.toml$
+  pass_filenames: false
+
+- id: update-addon-info.json
+  name: update addon-info.json
+  description: >
+    if pyproject.toml exists, update addon-info.json
+  language: perl
+  entry: update-package.json.pl
+  args:
+    - pyproject.toml
+    - addon-info.json
+  files: ^pyproject\.toml$
+  pass_filenames: false

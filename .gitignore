@@ -1,15 +1,39 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+/.vscode/perl-lang/
 
-# Test binary, built with `go test -c`
-*.test
+# create by https://github.com/iamcco/coc-gitignore (Sat Mar 04 2023 17:45:05 GMT+0800 (China Standard Time))
+# Perl.gitignore:
+!Build/
+.last_cover_stats
+/META.yml
+/META.json
+/MYMETA.*
+*.o
+*.pm.tdy
+*.bs
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+# Devel::Cover
+cover_db/
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# Devel::NYTProf
+nytprof.out
+
+# Dizt::Zilla
+/.build/
+
+# Module::Build
+_build/
+Build
+Build.bat
+
+# Module::Install
+inc/
+
+# ExtUtils::MakeMaker
+/blib/
+/_eumm/
+/*.gz
+/Makefile
+/Makefile.old
+/MANIFEST.bak
+/pm_to_blib
+/*.zip
